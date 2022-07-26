@@ -4,6 +4,8 @@ title: "[Feature]: "
 labels: ["feature", "triage", "mvp"]
 assignees:
   - elleshadow
+projects:
+  - News Readter
 body:
   - type: markdown
     attributes:
