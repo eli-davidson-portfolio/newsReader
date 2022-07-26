@@ -5,7 +5,7 @@ labels: ["feature", "triage", "mvp"]
 assignees:
   - elleshadow
 projects:
-  - News Readter
+  - News Reader
 body:
   - type: markdown
     attributes:
