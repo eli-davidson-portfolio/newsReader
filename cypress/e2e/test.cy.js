@@ -2,7 +2,7 @@ beforeEach(() => {
   //cy.intercept('GET', '/reservations', {fixture: 'reservations.json'}).as('getReservations') 
   //cy.intercept('POST', '/reservations', {fixture: 'reservations.json'}).as('postReservation') 
   //cy.intercept('DELETE', '/reservations', {fixture: 'reservations.json'}).as('deleteReservation') 
-  //cy.visit('localhost:3000') 
+  cy.visit('localhost:3000') 
 }) 
 
 describe('User Stories', () => {
