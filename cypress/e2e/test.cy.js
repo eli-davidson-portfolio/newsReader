@@ -15,3 +15,17 @@ describe('User Stories', () => {
       expect(true).to.equal(true)
   })
 })
+
+describe('App', () => {
+    it.skip('Should exist', () => {
+        cy.get('.App').should('exist')
+    })
+
+    it.skip('Should contain a name', () => {
+        cy.get('.App').within(() => {
+            cy.get('p').should('exist')
+            cy.get('p').invoke('text').should('eq', 'App')
+       })
+   })
+})
+
