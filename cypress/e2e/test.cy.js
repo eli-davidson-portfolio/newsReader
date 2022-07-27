@@ -24,7 +24,6 @@ describe('App', () => {
    
 })
 
-
 describe('ArticleContainer', () => {
     it.skip('Should exist', () => {
         cy.get('.ArticleContainer').should('exist')

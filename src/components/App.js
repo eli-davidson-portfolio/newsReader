@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import '../styles/App.scss'
 import { getData } from '../classes/apiEndpoints'
+import { ArticleContainer } from '../components/ArticleContainer' 
 
 
  
@@ -27,6 +28,7 @@ export function App() {
   return ( 
     <div className='App'> 
       <p>App</p> 
+      <ArticleContainer />
     </div> 
   ); 
 } 

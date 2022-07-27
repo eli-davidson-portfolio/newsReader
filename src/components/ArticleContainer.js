@@ -24,6 +24,4 @@ export function ArticleContainer() {
     </div> 
   ); 
 } 
- 
-//import { ArticleContainer } from '../components/ArticleContainer' 
-//<ArticleContainer />' 
+
