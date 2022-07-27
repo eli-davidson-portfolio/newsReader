@@ -7,7 +7,9 @@ export function Article({data, handleClick}) {
     <div className='Article' onClick={() => {
       handleClick(data)
     }}> 
-      <p>Title: {data.title}</p> 
+    <hr/>
+    <img className='thumbnail' src={data.multimedia[2].url} />
+    <p>{data.title}</p> 
     </div> 
   ); 
 } 

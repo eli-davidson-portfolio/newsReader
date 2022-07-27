@@ -1,9 +1,12 @@
 .Article {
-background-color: blue;
-color: white;
+    .thumbnail {
+        height: 150px;
+        width: 150px;
+    }
 
     &:hover{
         cursor: pointer;
         font-weight: bold;
+        background-color: lightgray;
     }
 }

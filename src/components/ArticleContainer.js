@@ -1,13 +1,16 @@
 import React, {useState, useEffect} from 'react';
 import '../styles/ArticleContainer.scss'
 import { getData } from '../classes/apiEndpoints'
- 
 import { Article } from '../components/Article' 
+import sections from '../data/sections';
 
- 
+const getRandomSection = () => {
+    return sections[Math.floor(Math.random() * sections.length)];
+}
+
 export function ArticleContainer({ handleClick }) { 
   const [articlesData, setArticlesData] = useState([])
-  const [section, setSection] = useState('science') 
+  const [section, setSection] = useState(getRandomSection()) 
   const [articles, setArticles] = useState([]) 
  
   useEffect(() => { 
@@ -23,11 +26,14 @@ export function ArticleContainer({ handleClick }) {
       const uuid = article.uri.split("/").pop()
       return <Article key={uuid} handleClick={handleClick} data={article}/>
     }))
-  }, [articlesData]) 
- 
+  }, [articlesData])
+  
   return ( 
     <div className='ArticleContainer'> 
-      <h2>ArticleContainer</h2> 
+      <input type="radio" id={sections[3]} name="fav_language" value={sections[3]} />
+        <label for={sections[3]}>{sections[3]}</label>
+
+      <h2>{section}</h2> 
       { !articlesData.length ? <h3>  LOADING...</h3> : articles}
     </div> 
   ); 
