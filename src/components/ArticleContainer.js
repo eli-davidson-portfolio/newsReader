@@ -6,13 +6,11 @@ import { Article } from '../components/Article'
 
  
 export function ArticleContainer({ handleClick }) { 
-  const [id, setID] = useState('') 
   const [articlesData, setArticlesData] = useState([])
   const [section, setSection] = useState('science') 
   const [articles, setArticles] = useState([]) 
  
   useEffect(() => { 
-    // if (true) return
     getData(section)
     .then(data => setArticlesData(data.results))
     .catch(error => alert(error));
@@ -21,7 +19,8 @@ export function ArticleContainer({ handleClick }) {
    useEffect(() => { 
     if (!articlesData.length) return
     setArticles(articlesData.map(article => {
-      return <Article handleClick={handleClick} data={article}/>
+      const uuid = article.uri.split("/").pop()
+      return <Article key={uuid} handleClick={handleClick} data={article}/>
     }))
   }, [articlesData]) 
  
