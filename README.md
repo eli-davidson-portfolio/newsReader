@@ -1,1 +1,1 @@
-[Deploy link](https://main.dhvkmg3n897on.amplifyapp.com/)
+[Deploy link](https://main.d2b8pxmbfer2ks.amplifyapp.com/)
