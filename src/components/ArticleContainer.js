@@ -1,22 +1,22 @@
 import React, {useState, useEffect} from 'react';
 import '../styles/ArticleContainer.scss'
+import { getData } from '../classes/apiEndpoints'
  
 export function ArticleContainer() { 
   const [id, setID] = useState('') 
+  const [articles, setArticles] = useState([]) 
  
   useEffect(() => { 
-    console.log('ArticleContainer did mount') 
- 
-    return(() => { 
-    console.log('ArticleContainer will unmount') 
-    }) 
+    getData('science')
+    .then(data => setArticles(data.results))
+    .catch(error => alert(error));
   }, []) 
  
    useEffect(() => { 
-    console.log('ArticleContainer did update') 
+    if (!articles.length) return
+      console.log("articles2", articles)
  
- 
-  }, [id]) 
+  }, [articles]) 
  
   return ( 
     <div className='ArticleContainer'> 
