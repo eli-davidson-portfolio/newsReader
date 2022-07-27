@@ -5,13 +5,14 @@ import { getData } from '../classes/apiEndpoints'
 import { Article } from '../components/Article' 
 
  
-export function ArticleContainer() { 
+export function ArticleContainer({ handleClick }) { 
   const [id, setID] = useState('') 
   const [articlesData, setArticlesData] = useState([])
   const [section, setSection] = useState('science') 
   const [articles, setArticles] = useState([]) 
  
   useEffect(() => { 
+    // if (true) return
     getData(section)
     .then(data => setArticlesData(data.results))
     .catch(error => alert(error));
@@ -20,7 +21,7 @@ export function ArticleContainer() {
    useEffect(() => { 
     if (!articlesData.length) return
     setArticles(articlesData.map(article => {
-      return <Article data={article}/>
+      return <Article handleClick={handleClick} data={article}/>
     }))
   }, [articlesData]) 
  

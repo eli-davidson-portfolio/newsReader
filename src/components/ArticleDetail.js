@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import '../styles/ArticleDetail.scss'
  
-export function ArticleDetail() { 
+export function ArticleDetail({ detail, handleClick }) { 
   const [id, setID] = useState('') 
  
   useEffect(() => { 
@@ -19,11 +19,13 @@ export function ArticleDetail() {
   }, [id]) 
  
   return ( 
-    <div className='ArticleDetail'> 
-      <p>ArticleDetail</p> 
+    <div className='ArticleDetail'>
+      <button onClick={() => {
+        handleClick({})
+      }}>Back</button>
+      <p>ArticleDetail</p>
+      <p>{detail.title}</p>
     </div> 
   ); 
 } 
- 
-//import { ArticleDetail } from '../components/ArticleDetail' 
-//<ArticleDetail />' 
+
