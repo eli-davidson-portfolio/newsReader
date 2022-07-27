@@ -19,6 +19,7 @@ export function ArticleContainer({ handleClick }) {
    useEffect(() => { 
     if (!articlesData.length) return
     setArticles(articlesData.map(article => {
+      if (article.item_type === "EmbeddedInteractive") return
       const uuid = article.uri.split("/").pop()
       return <Article key={uuid} handleClick={handleClick} data={article}/>
     }))
