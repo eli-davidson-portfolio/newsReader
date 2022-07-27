@@ -19,7 +19,6 @@ export function ArticleContainer() {
  
    useEffect(() => { 
     if (!articlesData.length) return
-      console.log("articles2", articlesData)
     setArticles(articlesData.map(article => {
       return <Article data={article}/>
     }))
@@ -27,8 +26,8 @@ export function ArticleContainer() {
  
   return ( 
     <div className='ArticleContainer'> 
-      <p>ArticleContainer</p> 
-      {!!articlesData.length && articles}
+      <h2>ArticleContainer</h2> 
+      { !articlesData.length ? <h3>  LOADING...</h3> : articles}
     </div> 
   ); 
 } 
