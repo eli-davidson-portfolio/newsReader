@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import '../styles/Article.scss'
  
-export function Article() { 
+export function Article({data}) { 
   const [id, setID] = useState('') 
  
   useEffect(() => { 
@@ -20,10 +20,8 @@ export function Article() {
  
   return ( 
     <div className='Article'> 
-      <p>Article</p> 
+      <p>Title: {data.title}</p> 
     </div> 
   ); 
 } 
- 
-//import { Article } from '../components/Article' 
-//<Article />' 
+
