@@ -1,0 +1,9 @@
+.Article {
+background-color: blue;
+color: white;
+
+    &:hover{
+        cursor: pointer;
+        font-weight: bold;
+    }
+}

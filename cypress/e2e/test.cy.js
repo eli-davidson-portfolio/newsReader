@@ -13,14 +13,31 @@ describe('App', () => {
     it('Should exist', () => {
         cy.get('.App').should('exist')
     })
+ 
+})
 
-    it('Should contain a name', () => {
-        cy.get('.App').within(() => {
+describe('ArticleContainer', () => {
+    it('Should exist', () => {
+        cy.get('.ArticleContainer').should('exist')
+    })
+})
+
+describe('Article', () => {
+    it('Should exist', () => {
+        cy.get('.Article').should('exist')
+    })
+})
+
+describe('ArticleDetail', () => {
+    it.skip('Should exist', () => {
+        cy.get('.ArticleDetail').should('exist')
+    })
+
+    it.skip('Should contain a name', () => {
+        cy.get('.ArticleDetail').within(() => {
             cy.get('p').should('exist')
-            cy.get('p').invoke('text').should('eq', 'App')
+            cy.get('p').invoke('text').should('eq', 'ArticleDetail')
        })
    })
-
-   
 })
 
