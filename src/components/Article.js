@@ -1,14 +1,13 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import '../styles/Article.scss'
  
 export function Article({data, handleClick}) { 
-
   return ( 
     <div className='Article' onClick={() => {
-      handleClick(data)
+      handleClick(data, data.section)
     }}> 
     <hr/>
-    <img className='thumbnail' src={data.multimedia[2].url} />
+    {data.multimedia && <img className='thumbnail' src={data.multimedia[2].url} />}
     <p>{data.title}</p> 
     </div> 
   ); 

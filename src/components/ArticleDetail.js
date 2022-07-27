@@ -28,7 +28,7 @@ export function ArticleDetail({ detail, handleClick }) {
   return ( 
     <div className='ArticleDetail'>
       <button onClick={() => {
-        handleClick({})
+        handleClick({}, section)
       }}>Back</button>
       <p className='title'>{title}</p>
       <p className='byline'>{byline}</p>
