@@ -59,3 +59,17 @@ describe('User Stories', () => {
       expect(true).to.equal(true)
   })
 })
+
+describe('ArticleDetail', () => {
+    it.skip('Should exist', () => {
+        cy.get('.ArticleDetail').should('exist')
+    })
+
+    it.skip('Should contain a name', () => {
+        cy.get('.ArticleDetail').within(() => {
+            cy.get('p').should('exist')
+            cy.get('p').invoke('text').should('eq', 'ArticleDetail')
+       })
+   })
+})
+
