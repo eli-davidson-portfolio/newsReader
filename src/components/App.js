@@ -1,11 +1,17 @@
 import React, {useState, useEffect} from 'react';
 import '../styles/App.scss'
+import { getData } from '../classes/apiEndpoints'
+
+
  
 export function App() { 
   const [id, setID] = useState('') 
- 
+  
   useEffect(() => { 
     console.log('App did mount') 
+    getData('science')
+    .then(data => console.log(data))
+    .catch(error => alert(error));
  
     return(() => { 
     console.log('App will unmount') 
@@ -25,5 +31,3 @@ export function App() {
   ); 
 } 
  
-//import { App } from '../components/App' 
-//<App />' 

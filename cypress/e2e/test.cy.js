@@ -1,7 +1,5 @@
 beforeEach(() => { 
-  //cy.intercept('GET', '/reservations', {fixture: 'reservations.json'}).as('getReservations') 
-  //cy.intercept('POST', '/reservations', {fixture: 'reservations.json'}).as('postReservation') 
-  //cy.intercept('DELETE', '/reservations', {fixture: 'reservations.json'}).as('deleteReservation') 
+  cy.intercept('GET', {fixture: 'articles.json'}).as('getArticles') 
   cy.visit('localhost:3000') 
 }) 
 
@@ -22,5 +20,7 @@ describe('App', () => {
             cy.get('p').invoke('text').should('eq', 'App')
        })
    })
+
+   
 })
 
