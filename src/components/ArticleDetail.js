@@ -29,14 +29,15 @@ export function ArticleDetail({ detail, handleClick }) {
     <div className='ArticleDetail'>
       <button onClick={() => {
         handleClick({}, section)
-      }}>Back</button>
+      }}>◀️</button>
+      <h2 className='section'>{section} {subsection}</h2>
       <p className='title'>{title}</p>
       <p className='byline'>{byline}</p>
-      <p className='abstract'>{abstract}</p>
+      <p className='abstract'>{abstract}
+      <a href={url}>More...</a></p>
       <img src={multimedia[1].url} />
       <p className='caption'>{multimedia[1].caption}</p>
       <p className='date'>{dateString.toLocaleDateString("en-US")}</p>
-      <a href={url}>Read Article</a>
     </div> 
   ); 
 } 

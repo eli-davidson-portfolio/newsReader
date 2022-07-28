@@ -9,15 +9,17 @@ const getRandomSection = () => {
 }
 
 export function ArticleContainer({ currentSection, handleClick }) { 
-  const [section, setSection] = useState('') 
+  const [section, setSection] = useState('')
+  const [sectionButtons, setSectionButtons] = useState('')  
   const [articlesData, setArticlesData] = useState([])
   const [articles, setArticles] = useState([]) 
  
   useEffect(() => { 
     currentSection ? setSection(currentSection) : setSection(getRandomSection())
   }, []) 
-
+  
   useEffect(() => {
+    generateSectionRadios(section)
     section && getData(section)
     .then(data => setArticlesData(data.results))
     .catch(error => alert(error));
@@ -28,17 +30,33 @@ export function ArticleContainer({ currentSection, handleClick }) {
     setArticles(articlesData.map(article => {
       if (article.item_type !== "Article") return
       const uuid = article.uri.split("/").pop()
-      return <Article key={uuid} handleClick={handleClick} data={article}/>
+      return <Article handleClick={handleClick} data={article}/>
     }))
   }, [articlesData])
+
+  const changeSection = (section) => {
+    setArticlesData([])
+    setSection(section)
+  }
   
+const generateSectionRadios = (selection) => {
+    const radios = sections.map(section => {
+      let status = false
+      if (selection === section) {
+        status = true
+      } 
+      return (<>
+        <input onChange={() =>{changeSection(section)}} type="radio" id={section} name="sectionFilter" value={section} checked={status}/>
+        <label onClick={() =>{changeSection(section)}} htmlFor={section}>{section}</label>
+        </>)
+      })
+    setSectionButtons(radios)
+}
+
   return ( 
     <div className='ArticleContainer'> 
-      <input type="radio" id={sections[3]} name="fav_language" value={sections[3]} />
-        <label htmlFor={sections[3]}>{sections[3]}</label>
-
-      <h2>{section}</h2> 
-      { !articlesData.length ? <h3>  LOADING...</h3> : articles}
+      {sectionButtons}
+      {!articlesData.length ? <h3>  LOADING...</h3> : articles}
     </div> 
   ); 
 } 

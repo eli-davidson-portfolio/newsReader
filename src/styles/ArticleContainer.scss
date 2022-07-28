@@ -1,3 +1,21 @@
 .ArticleContainer {
+    input {
+        display: none;
+        &:checked+label {
+            color: blue;
+            font-weight: bold;
+            border-bottom: 1px solid blue;
+        }
+    }
+    label {
+        margin: 1%;
+        font-weight: bold;
+        &:hover {
+            cursor: pointer;
+            font-weight: bold;
+            color: black;
+            border-bottom: 1px solid black;
+        }
+    }
 
 }
