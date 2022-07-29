@@ -1,30 +1,43 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import '../styles/ArticleDetail.scss'
  
 export function ArticleDetail({ detail, handleClick }) { 
-  const [id, setID] = useState('') 
- 
-  useEffect(() => { 
-    console.log('ArticleDetail did mount') 
- 
-    return(() => { 
-    console.log('ArticleDetail will unmount') 
-    }) 
-  }, []) 
- 
-   useEffect(() => { 
-    console.log('ArticleDetail did update') 
- 
- 
-  }, [id]) 
- 
+  const {
+    section,
+    subsection,
+    title,
+    abstract,
+    url,
+    uri,
+    byline,
+    item_type,
+    updated_date,
+    created_date,
+    published_date,
+    material_type_facet,
+    kicker,
+    des_facet,
+    org_facet,
+    per_facet,
+    geo_facet,
+    multimedia,
+    short_url,
+  } = detail
+
+  const dateString = new Date(published_date)
   return ( 
     <div className='ArticleDetail'>
       <button onClick={() => {
-        handleClick({})
-      }}>Back</button>
-      <p>ArticleDetail</p>
-      <p>{detail.title}</p>
+        handleClick({}, section)
+      }}>◀️</button>
+      <h2 className='section'>{section} {subsection}</h2>
+      <p className='title'>{title}</p>
+      <p className='byline'>{byline}</p>
+      <p className='abstract'>{abstract}
+      <a href={url}>More...</a></p>
+      <img src={multimedia[1].url} />
+      <p className='caption'>{multimedia[1].caption}</p>
+      <p className='date'>{dateString.toLocaleDateString("en-US")}</p>
     </div> 
   ); 
 } 

@@ -1,20 +1,20 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import '../styles/App.scss'
 import { ArticleContainer } from '../components/ArticleContainer' 
 import { ArticleDetail } from '../components/ArticleDetail' 
- 
+
 export function App() { 
-  const [id, setID] = useState('')
+  const [section, setSection] = useState('')
   const [detail, setDetail] = useState({})
   
-  const handleClick = (detail) => {
-    detail ? setDetail(detail) : setDetail({})
+  const handleClick = (detail, section = '') => {
+    section && setSection(section)
+    setDetail(detail)
   }
 
   return ( 
     <div className='App'> 
-      <p>App</p> 
-      {!detail.title ? <ArticleContainer handleClick={handleClick} /> :
+      {!detail.title ? <ArticleContainer currentSection={section} handleClick={handleClick} /> :
       <ArticleDetail detail={detail} handleClick={handleClick}/>}
     </div> 
   ); 
