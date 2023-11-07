@@ -1,57 +1,47 @@
-# News Reader 
-#### Deployable
--[Deploy link](https://main.d2b8pxmbfer2ks.amplifyapp.com/)
+# News Reader
 
-#### Getting Started
-1. Clone the repo from [github](https://github.com/elleshadow/newsReader/tree/main/client)
+## Deployable
+- [Deploy link](https://main.d2b8pxmbfer2ks.amplifyapp.com/)
 
-2. Cd into the directory from your terminal and install the project dependencies:
-- Run `npm install` or `npm i` in the terminal
+## Getting Started
+1. Clone the repo from [GitHub](https://github.com/elleshadow/newsReader/tree/main/client).
+2. Cd into the directory and install the project dependencies by running `npm install` in the terminal.
+3. To view the web app, run `npm start` in the terminal, then copy the local host address and paste it into your web browser.
 
-3. To see the web app:
-- Run `npm start` in the terminal
-- Press `ctrl/cmd + c` to exit
-
-4. Copy the local host address from your terminal and add to your web browser to see the web app
-
-### Table of Contents
+## Table of Contents
 - [About the Project](#about-the-project)
 - [Contributors](#contributors)
 - [Technologies Used](#technologies-used)
-- [Instructions on Use](#instructions-on-use)
-- [Demo of Features](#demo-of-features)
-- [Testing the app](#testing-the-app)
+- [Testing the App](#testing-the-app)
 - [Challenges and Wins](#challenges-and-wins)
 - [Project Overview and Goals](#project-overview-and-goals)
 - [Future Additions](#future-additions)
 
-#### About the Project
-News Reader is an application that displays the Top stories from the New York Times, and allows users to view additional details about the articles.
+## About the Project
+News Reader is a React application that showcases top stories from The New York Times, offering users the ability to read additional details about the articles.
 
-#### Contributors
- - [Eli Davidson](https://github.com/elleshadow)
+## Contributors
+- [Eli Davidson](https://github.com/elleshadow)
 
-#### Technologies Used
+## Technologies Used
 - React
-- Javascript
+- JavaScript
 - HTML
 - CSS
-- Cypress 
+- Cypress for testing
 
-#### Testing the App
-`End-to-end` testing was implimented to test the application by using Cypress. `Stubbing` and `intercepting` was used to control the network response. The app was fully tested based on the user story from start to finish. 
+## Testing the App
+End-to-end testing with Cypress was implemented, utilizing stubbing and intercepting to control the network response. The application was thoroughly tested based on user stories.
 
-#### Challenges and Wins
+## Challenges and Wins
 
-##### Challenges
-- Designing the app to meet MVP while minamizing the time to competion
+### Challenges
+- Achieving MVP within a limited timeframe.
 
-##### Wins
-- Deploying to AWS
+### Wins
+- Successful deployment on AWS.
 
-#### Future Additions
-- Additional styling, more responsive design elements
-- Additional Cypress testing
-- Search features
-
-
+## Future Additions
+- Enhanced styling and responsive design.
+- Expanded Cypress test coverage.
+- Implementing search functionality.
